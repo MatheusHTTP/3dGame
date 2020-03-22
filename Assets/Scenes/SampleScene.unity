@@ -4522,7 +4522,7 @@ MonoBehaviour:
   - {fileID: 3624366641597413043, guid: 04582cc09aebf0141b52b6007ae394c8, type: 3}
   - {fileID: 4355783406840037889, guid: 00382adb2009bcb45ad5abc0572ec39c, type: 3}
   - {fileID: 4326540947519819666, guid: 51c6d8d22de26fc4583dc11850b632bc, type: 3}
-  - {fileID: 4720745364631724022, guid: c96c33e757ba0b54a8b2b224616f917d, type: 3}
+  - {fileID: 7783955803868256452, guid: 5f91d99a3b84893409fb3037917c2dad, type: 3}
   selected: {fileID: 537512909}
   hand: {fileID: 537512909}
   head: {fileID: 963194225}
@@ -4572,7 +4572,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1001 &790731489
