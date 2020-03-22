@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FpsWalk : MonoBehaviour
+public class fpsWalk : MonoBehaviour
 {
     Vector3 playerAxis;
     Vector3 playerRotAxis;
+    Vector3 headAxis;
     Vector3 headRotAxis;
     public CharacterController charac;
     public GameObject prefabProjectile;
@@ -30,9 +31,9 @@ public class FpsWalk : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject ball = Instantiate(prefabProjectile, transform.position+head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000+ Vector3.up*200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right*500, ForceMode.Impulse);
+            GameObject ball = Instantiate(prefabProjectile, transform.position + head.transform.forward, Quaternion.identity);
+            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 3000 + Vector3.up * 200);
+            //ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
             Destroy(ball, 3);
         }
     }

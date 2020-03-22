@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4715061541533032}
   - component: {fileID: 33620624783639084}
   - component: {fileID: 23752083033852022}
-  - component: {fileID: 5367265673301555051}
-  - component: {fileID: 5177690384185677608}
+  - component: {fileID: -2919401065704887887}
+  - component: {fileID: 7421114607551700560}
   m_Layer: 0
   m_Name: scoop
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185541151357718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.2126048, y: 0, z: 0, w: -0.9771383}
   m_LocalPosition: {x: -4.87, y: 0.05, z: 18.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,21 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5367265673301555051
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185541151357718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c3d319025eaa96d4abb07691f4786665, type: 3}
---- !u!54 &5177690384185677608
+--- !u!54 &-2919401065704887887
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,3 +97,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &7421114607551700560
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185541151357718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7501128
+  m_Height: 0.70906806
+  m_Direction: 1
+  m_Center: {x: -1.3224852, y: 2.1746583, z: -0.06928563}
