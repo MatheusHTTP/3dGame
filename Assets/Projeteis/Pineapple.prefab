@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4332711379134457395}
   - component: {fileID: 4190454590368499852}
   - component: {fileID: -8414711074582173850}
+  - component: {fileID: 6561610349276739125}
   m_Layer: 0
   m_Name: Pineapple
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 82731c4f4b197fb49a6a473836aefbb7, type: 3}
+--- !u!114 &6561610349276739125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355783406840037889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c673aca3e7af547b1dd8be209d410e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombForce: 2000
