@@ -11,9 +11,9 @@ public class fpsWalkV2 : MonoBehaviour
     public CharacterController charac;
     public GameObject[] prefabProjectiles = new GameObject[9];
     public GameObject selected;
+    public GameObject hand;
     public GameObject head;
     public GameObject backup;
-    public GameObject laserpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,14 @@ public class fpsWalkV2 : MonoBehaviour
 
         transform.Rotate(playerRotAxis);//gira o corpo
         head.transform.Rotate(headRotAxis);//gira cabeca
+        if (hand != selected)
+        {
+            Destroy(hand);
+            hand = Instantiate(selected, hand.transform.position, transform.rotation, head.transform);
+            hand.GetComponent<Rigidbody>().useGravity = false;
+            Destroy(hand.GetComponent<Collider>());
+
+        }
 
         if (Input.GetKey(KeyCode.Alpha1)) { selected = prefabProjectiles[0]; }
         if (Input.GetKey(KeyCode.Alpha2)) { selected = prefabProjectiles[1]; }
@@ -48,27 +56,11 @@ public class fpsWalkV2 : MonoBehaviour
         if (selected != null && selected != backup) {
             if (Input.GetButtonDown("Fire1")) {
                 
-                GameObject ball = Instantiate(selected, transform.position + head.transform.forward*2, transform.rotation);
-                ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 2000);
-                //ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse); // faz o objeto voar no modo beyblade
-
-                if (ball.GetComponent<guidedBomb>())
-                {
-                    ball.GetComponent<guidedBomb>().target = laserpoint;
-                }
-            }
-
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
-            {
-                laserpoint.transform.position = hit.point;
-
-            }
-            else
-            {
-                laserpoint.transform.position = transform.position + transform.forward * 1000;
+                GameObject ball = Instantiate(selected, transform.position + head.transform.forward, transform.rotation);
+                ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 2000 + Vector3.up * 200);
+                ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse); // faz o objeto voar no modo beyblade
+                Destroy(ball, 3);
             }
         }  
-
-        
     }
 }

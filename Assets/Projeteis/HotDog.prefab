@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4348451884452073440}
   - component: {fileID: 396848399943417653}
   - component: {fileID: 7273433777869921826}
-  - component: {fileID: -3400071277920320500}
   m_Layer: 0
   m_Name: HotDog
   m_TagString: Untagged
@@ -111,16 +110,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21060337, y: 0.06671445, z: 0.08282583}
   m_Center: {x: -0.00000015273694, y: -0.0000000055879354, z: -0.000000018626455}
---- !u!114 &-3400071277920320500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326540947519819666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c673aca3e7af547b1dd8be209d410e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombForce: 2000
