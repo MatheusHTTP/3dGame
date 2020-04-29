@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerWeapon
+  - EnemyWeapon
+  - Enemy
+  - CollectableA
+  - CollectableB
+  - CollectableC
   layers:
   - Default
   - TransparentFX
