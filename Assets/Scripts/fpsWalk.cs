@@ -14,15 +14,16 @@ public class fpsWalk : MonoBehaviour
     public GameObject prefabProjectile;
     public GameObject dead;
     public GameObject head;
-    public Text lifebar;
-    public int vidas = 7;
-    string life;
+    public float vida;
+    public Image hud;
+    float calc;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        life = "vidas: " + vidas;
-        lifebar.text = life;
+        calc = (hud.transform.localScale.x) / vida;
+        vida = hud.transform.localScale.x;
+        print(calc);
     }
 
     // Update is called once per frame
@@ -44,6 +45,15 @@ public class fpsWalk : MonoBehaviour
             //ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
             Destroy(ball, 3);
         }
+        if(hud.transform.localScale.x > vida)
+        {
+            hud.rectTransform.localScale = new Vector3(hud.transform.localScale.x - 0.01f, hud.transform.localScale.y, hud.transform.localScale.z);
+        }
+        if (hud.transform.localScale.x < 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Derrota");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,21 +61,8 @@ public class fpsWalk : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyWeapon"))
         {
             collision = null;
-            vidas--;
-            life = "vidas: " + vidas;
-            lifebar.text = life;
-            if (vidas < 0)
-            {
-                dead.SetActive(true);
-                this.enabled = false;
-                Cursor.lockState = CursorLockMode.None;
-                SceneManager.LoadScene("Derrota");
-            }
-            else
-            {
-                print("vidas: " + vidas);
-            }
- 
+            print(vida);
+            vida -= calc;
         }
     }
 }

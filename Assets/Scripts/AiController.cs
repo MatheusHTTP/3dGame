@@ -117,13 +117,16 @@ public class AiController : MonoBehaviour
         while (state == States.attack)
         {
             agent.SetDestination(target.transform.position);
-            if (Vector3.Distance(transform.position, target.transform.position) > 10)
+            if (Vector3.Distance(transform.position, target.transform.position) > 20)
             {
                 agent.isStopped = false;
 
             }
             else
             {
+                agent.isStopped = false;
+                agent.SetDestination(target.transform.position);
+                yield return new WaitForSeconds(0.2f);
                 agent.isStopped = true;
             }
                 
