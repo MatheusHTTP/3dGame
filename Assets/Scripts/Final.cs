@@ -10,7 +10,6 @@ public class Final : MonoBehaviour
     public bool col = false;
     public GameObject vat;
     public GameObject pei;
-    public GameObject enemy;
     public GameObject[] itens = new GameObject[3];
     GameObject ball = null;
     // Start is called before the first frame update
@@ -37,11 +36,14 @@ public class Final : MonoBehaviour
             {
                 if (itens[0].active && itens[1].active && itens[2].active)
                 {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach (GameObject enemy in enemies) { 
+                        GameObject.Destroy(enemy);
+                    }
                     popup.SetActive(false);
                     itens[0].SetActive(false);
                     itens[1].SetActive(false);
                     itens[2].SetActive(false);
-                    enemy.SetActive(false);
                     ball = Instantiate(pei, vat.transform.position, Quaternion.identity);
                     
                 }
